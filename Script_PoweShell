@@ -1,0 +1,20 @@
+Ver o ultimo usuario logado
+- $CS = Gwmi Win32_ComputerSystem -Comp "RAD25097" 
+"usuario Logado: " + $CS.UserName
+
+________________
+
+Pegar Grupos no AD
+
+Get-ADGroup -filter * | select name
+Get-ADGroup -filter * | select name | export-csv "c:\listMemberGroup.csv"
+
+Get-ADGroup -filter * | Format-Table
+Get-ADGroup -filter * | Format-Table -AutoSize
+________________
+#Forçar mostrar tudo 
+
+Get-ADGroup -filter * -Property * | select * 
+
+Get-ADGroup -filter * -Property * | select name,Description
+Get-ADGroup -filter * -Property * | select name,Description | export-csv "c:\listGroup.csv"
