@@ -1,0 +1,7 @@
+# Listar maquinas que não estão logando a mais de 16 semanas.
+
+dsquery computer -inactive 16 -limit 0 > c:\computer.txt
+
+# Remover maquinas que não estão logando a mais de 16 semanas
+
+dsquery computer -inactive 16 -limit 0 | dsrm -subtree -noprompt -c > c:\computer.txt
